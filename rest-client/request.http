@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:3000
+@baseUrl = http://localhost:3001
 @jwtToken = {{authLogin.response.body.accessToken}}
 
 @postUuid = {{createPostOwned.response.body.id}}
@@ -43,7 +43,7 @@ Content-Type: application/json
 Authorization: Bearer {{jwtToken}}
 
 {
-  "name": "{{userNameForTesting}}",
+  "name": "{{userNameForTesting}} Otávio",
   "email": "{{userEmailForTesting}}"
 }
 
@@ -78,7 +78,7 @@ Authorization: Bearer {{jwtToken}}
 
 {
   "title": "Título do post",
-  "excerpt": "Excerto",
+  "excerpt": "Excerto do post",
   "content": "Conteúdo",
   "coverImageUrl": "http://localhost"
 }
@@ -108,7 +108,7 @@ Content-Type: application/json
 Authorization: Bearer {{jwtToken}}
 
 {
-  "title": "NOVO - Título do post",
+  "title": "PUBLISHED Título do post",
   "excerpt": "NOVO - Excerto",
   "content": "NOVO - Conteúdo",
   "published": true
@@ -128,10 +128,10 @@ Authorization: Bearer {{jwtToken}}
 Content-Type: multipart/form-data; boundary=----BryenFormBoundary
 
 ------BryenFormBoundary
-Content-Disposition: form-data; name="file"; filename="exemplo.png"
+Content-Disposition: form-data; name="file"; filename="image.png"
 Content-Type: image/png
 
-< ../dev/images/sample-image.jpeg
+< ../dev/images/image.gif
 ------BryenFormBoundary--
 
 ### Read Image
